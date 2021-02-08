@@ -3,8 +3,7 @@
   "version": "1.0.0-Beta",
   "main": "index.js",
   "author": "SoulHarsh007",
-  "license": "GPL-3.0-or-later",
-  "private": true,
+  "license": "BSD-3-Clause",
   "type": "module",
   "scripts": {
     "start": "node --enable-one-shot-optimization --max-old-space-size=400 --expose_gc --gc-interval=100 --clear-free-memory TuxManager.js",
