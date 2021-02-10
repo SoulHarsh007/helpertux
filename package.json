@@ -28,7 +28,7 @@
     "prettier": "2.2.1"
   },
   "dependencies": {
-    "@nia3208/centra": "1.0.9-1",
+    "@nia3208/centra": "1.0.9",
     "@nia3208/pretty-ms": "7.0.0",
     "bufferutil": "4.0.3",
     "cheerio": "1.0.0-rc.5",
