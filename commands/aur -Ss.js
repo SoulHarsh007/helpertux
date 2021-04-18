@@ -91,7 +91,12 @@ export default class SearchAur extends BaseCommand {
    */
   async getPinfo(name) {
     return await centra('https://aur.archlinux.org/rpc/')
-      .query({v: 5, type: 'search', by: 'name-desc', arg: name})
+      .query({
+        v: 5,
+        type: 'search',
+        by: 'name-desc',
+        arg: name,
+      })
       .json();
   }
 }

@@ -47,7 +47,9 @@ export default class MessageUpdate extends BaseEvent {
               .setTitle(
                 `Slow down a little! You can use this command after ${prettyMS(
                   time - Date.now(),
-                  {compact: true}
+                  {
+                    compact: true,
+                  }
                 )}`
               )
               .setColor('RED'),
@@ -70,7 +72,7 @@ export default class MessageUpdate extends BaseEvent {
             .setTitle(
               'Oh no! HelperTux ran into an error, this incident has been reported.'
             )
-            .setColor(),
+            .setColor('RED'),
         });
       }
     }

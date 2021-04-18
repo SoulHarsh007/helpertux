@@ -20,7 +20,7 @@ export default class Ping extends BaseCommand {
       name: 'ping -me',
       hidden: false,
       aliases: ['ping -localhost'],
-      usage: "used to check bot's ping and other info",
+      usage: 'used to check bots ping and other info',
       example: prefix => `${prefix}${this.name}`,
     });
   }

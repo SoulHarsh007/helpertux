@@ -179,7 +179,11 @@ export default class InfoAur extends BaseCommand {
    */
   async getPinfo(name, filters = {}) {
     return await centra('https://aur.archlinux.org/rpc/')
-      .query({v: 5, type: 'info', arg: name})
+      .query({
+        v: 5,
+        type: 'info',
+        arg: name,
+      })
       .json();
   }
 }

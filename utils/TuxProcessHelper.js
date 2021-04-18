@@ -18,11 +18,7 @@ export async function load(tux) {
     const command = new Command(tux);
     tux.commands.set(command.name, command);
     command.aliases.forEach(x => tux.aliases.set(x, command));
-    tux.logger.log(
-      `${command.name} Loaded`,
-      'CommandLoader',
-      'Command Sucessfully Loaded'
-    );
+    tux.logger.log(`${command.name} Loaded`, 'INFO', 'CommandLoader');
   }
   const eventFiles = readdirSync('./events/').filter(file =>
     file.endsWith('.js')
@@ -30,7 +26,7 @@ export async function load(tux) {
   for (const file of eventFiles) {
     const {default: Event} = await import(`../events/${file}`);
     const event = new Event(tux);
-    tux.logger.log(`${event.name} loaded!`, 'EventLoader', 'Event Loaded');
+    tux.logger.log(`${event.name} loaded!`, 'INFO', 'EventLoader');
     tux.on(event.name, (...args) => event.execute(...args));
   }
 }

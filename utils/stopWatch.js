@@ -43,7 +43,7 @@ export class StopWatch {
 
   /**
    * @function reset
-   * @returns {StopWatch} - returns reseted stopwatch instance
+   * @returns {StopWatch} - resets and returns stopwatch instance
    */
   reset() {
     this._start = performance.now();

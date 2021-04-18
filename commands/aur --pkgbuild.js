@@ -45,7 +45,10 @@ export default class Getpkgbuild extends BaseCommand {
       return msg.reply({
         embed: new MessageEmbed().setTitle('No results found').setColor('RED'),
       });
-    return msg.channel.send(pkgbuild, {split: true, code: 'sh'});
+    return msg.channel.send(pkgbuild, {
+      split: true,
+      code: 'sh',
+    });
   }
 
   /**

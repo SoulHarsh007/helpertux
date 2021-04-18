@@ -4,8 +4,8 @@ import {load} from './utils/TuxProcessHelper.js';
 import cluster from 'cluster';
 import fastify from 'fastify';
 import {get} from 'https';
-let x = 0;
 if (cluster.isMaster) {
+  let x = 0;
   console.log(`Tux Process Manager Online, PID: ${process.pid}`);
   let node = cluster.fork();
   cluster.on('exit', (worker, code, signal) => {

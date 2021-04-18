@@ -19,7 +19,7 @@ export default class SearchOfficial extends BaseCommand {
   constructor(tux) {
     super(tux, {
       name: 'pacman -Ss',
-      usage: 'used to search offical arch repos for a package',
+      usage: 'used to search official arch repos for a package',
       example: prefix => `${prefix}${this.name} coreutils`,
       cooldown: 2500,
     });

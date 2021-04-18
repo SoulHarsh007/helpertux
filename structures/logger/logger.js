@@ -19,19 +19,17 @@ export class Logger {
    */
   storeLog() {
     const date = new Date();
-    this.logs.forEach(log =>
-      writeFileSync(
-        `./logs/${date
-          .toLocaleDateString('en-us', {
-            day: 'numeric',
-            month: 'short',
-            timeZone: 'Asia/Kolkata',
-            year: 'numeric',
-          })
-          .replace(',', '')}.log`,
-        `${log}\n`,
-        'utf8'
-      )
+    writeFileSync(
+      `./logs/${date
+        .toLocaleDateString('en-us', {
+          day: 'numeric',
+          month: 'short',
+          timeZone: 'Asia/Kolkata',
+          year: 'numeric',
+        })
+        .replace(',', '')}.log`,
+      `${this.logs.join('\n')}\n`,
+      'utf8'
     );
   }
   /**

@@ -20,7 +20,7 @@ export class HelperTux extends Client {
       messageCacheMaxSize: 5,
       messageCacheLifetime: 15,
       messageSweepInterval: 25,
-      messageEditHistoryMaxSize: 1,
+      messageEditHistoryMaxSize: 2,
       disableMentions: 'everyone',
       ws: {intents: ['GUILDS', 'GUILD_MESSAGES'], compress: true},
       presence: {
