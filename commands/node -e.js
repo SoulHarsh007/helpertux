@@ -94,7 +94,7 @@ export default class Eval extends BaseCommand {
     stopwatch.stop();
     if (typeof result !== 'string') {
       result = inspect(result, {
-        depth: Args.includes(/depth=*/g)
+        depth: Args.includes(/depth=*/gu)
           ? parseInt(
               Args.filter(x => x.startsWith('depth=')[0].replace('depth=', '')),
               10

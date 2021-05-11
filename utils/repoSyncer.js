@@ -54,7 +54,7 @@ export function cacheRepo(tux) {
     pkg
       .trim()
       .split('\n\n')
-      .map(x => x.replace(/%/g, ''))
+      .map(x => x.replace(/%/gu, ''))
       .map(x => {
         const y = x.split('\n');
         if (y.length > 2) json[y.shift()] = y;

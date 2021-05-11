@@ -14,9 +14,9 @@ export function sanitize(input, output) {
   const zws = String.fromCharCode(8203);
   return output
     .replace(
-      new RegExp(input.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&'), 'gi'),
+      new RegExp(input.replace(/[-/\\^$*+?.()|[\]{}]/gu, '\\$&'), 'giu'),
       '「ｒｅｄａｃｔｅｄ」'
     )
-    .replace(/`/g, `\`${zws}`)
-    .replace(/@/g, `@${zws}`);
+    .replace(/`/gu, `\`${zws}`)
+    .replace(/@/gu, `@${zws}`);
 }

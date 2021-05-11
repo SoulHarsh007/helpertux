@@ -49,10 +49,10 @@ export default class SearchAur extends BaseCommand {
       this.tux.logger.log(error, 'ERROR', 'Aur Error');
       return msg.reply(`AUR Error: ${error}`);
     }
-    if (Args.filter(x => x.match(/sort=[a-z]*|s=[a-z]*/g)).length) {
+    if (Args.filter(x => x.match(/sort=[a-z]*|s=[a-z]*/gu)).length) {
       const sorter =
-        Args.filter(x => x.match(/sort=[a-z]*|s=[a-z]*/g))[0].replace(
-          /sort=*|s=*/g,
+        Args.filter(x => x.match(/sort=[a-z]*|s=[a-z]*/gu))[0].replace(
+          /sort=*|s=*/gu,
           ''
         ) === 'votes'
           ? 'NumVotes'

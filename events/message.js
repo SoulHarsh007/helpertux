@@ -25,14 +25,14 @@ export default class Message extends BaseEvent {
    */
   execute(msg) {
     if (
-      msg.content.match(/<@(!|)807946103768612864>/g) &&
+      msg.content.match(/<@(!|)807946103768612864>/gu) &&
       msg.content.toLowerCase().includes('help') &&
       !msg.author.bot &&
       msg.guild
     ) {
       return this.tux.commands.get('tux -h').execute(msg, []);
     } else if (
-      msg.content.match(/<@(!|)807946103768612864>/g) &&
+      msg.content.match(/<@(!|)807946103768612864>/gu) &&
       !msg.author.bot &&
       msg.guild
     ) {
