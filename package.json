@@ -34,7 +34,7 @@
     "7zip-bin": "5.1.1",
     "@nia3208/centra": "1.0.9-1",
     "@nia3208/pretty-ms": "7.0.0",
-    "bufferutil": "4.0.3",
+    "bufferutil": "4.0.4",
     "cheerio": "1.0.0-rc.10",
     "discord.js": "12.5.3",
     "erlpack": "discord/erlpack",
