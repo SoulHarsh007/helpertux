@@ -35,7 +35,7 @@
     "@nia3208/centra": "1.0.9-1",
     "@nia3208/pretty-ms": "7.0.0",
     "bs58": "4.0.1",
-    "bufferutil": "4.0.5",
+    "bufferutil": "4.0.6",
     "cheerio": "1.0.0-rc.10",
     "discord.js": "12.5.3",
     "fastify": "3.24.1",
