@@ -21,9 +21,9 @@ export function cacheRepo(targetRepo) {
     readFileSync(`./repo/check/${x}/desc`, 'utf-8')
       .trim()
       .split('\n\n')
-      .map(x => x.replace(/%/gu, ''))
-      .map(x => {
-        const y = x.split('\n');
+      .map(y => y.replace(/%/gu, ''))
+      .map(z => {
+        const y = z.split('\n');
         if (y.length > 2) json[y.shift()] = y;
         else json[y.shift()] = y[0];
       });
@@ -222,6 +222,52 @@ export async function checkRepo(tux) {
         verbose: true,
       })}`
     );
+  if (paste.error) {
+    channel.send(
+      `${paste.error.message} while uploading results to privatebin! (${process.env.PRIVATE_BIN_URI})`
+    );
+    channel.send({
+      embed,
+    });
+  } else {
+    channel.send({
+      embed: embed
+        .setDescription(
+          `${result}\nGenerated completion report at: ${paste.url}`
+        )
+        .setURL(paste.url),
+    });
+  }
+}
+
+/**
+ * @author SoulHarsh007 <harsh.peshwani@outlook.com>
+ * @copyright SoulHarsh007 2022
+ * @since v1.0.0-Beta
+ * @async
+ * @function checkPackages
+ * @param {import('../structures/core/tux.js').HelperTux}  tux - tux, extended discord.js client
+ * @description Compares available rebornos packages to AUR
+ */
+export async function checkPackages(tux) {
+  const paste = await privateBin(
+    tux.outdated
+      .map(
+        (v, k) =>
+          `${k} seems to be outdated, AUR/${k}: v${v.aurVersion} vs Reborn-OS/${k}: v${v.version}`
+      )
+      .join('\n'),
+    (...args) => tux.logger.log(...args)
+  );
+  const channel = await tux.channels.fetch(
+    process.env.REPOSITORY_UPDATES_CHANNEL
+  );
+  const result = `Tux thinks there are: ${tux.outdated.size} outdated packages in Reborn-OS repository`;
+  const embed = new MessageEmbed()
+    .setDescription(result)
+    .setColor('BLUE')
+    .setTitle("Tux's Repository Monitoring System")
+    .setFooter('Next scheduled check: next boot');
   if (paste.error) {
     channel.send(
       `${paste.error.message} while uploading results to privatebin! (${process.env.PRIVATE_BIN_URI})`

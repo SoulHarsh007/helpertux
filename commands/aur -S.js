@@ -166,7 +166,7 @@ export default class InfoAur extends BaseCommand {
    * @returns {Promise<{version: number, type: string, resultcount: number, results: Results, error?: string}>} - Package information
    */
   async getPinfo(name, filters = {}) {
-    return await centra('https://aur.archlinux.org/rpc/')
+    return centra('https://aur.archlinux.org/rpc/')
       .query({
         v: 5,
         type: 'info',

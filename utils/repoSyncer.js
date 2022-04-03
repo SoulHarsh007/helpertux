@@ -71,13 +71,35 @@ export function cacheRepo(tux) {
     readFileSync(`./repo/extracted/${x}/desc`, 'utf-8')
       .trim()
       .split('\n\n')
-      .map(x => x.replace(/%/gu, ''))
-      .map(x => {
-        const y = x.split('\n');
-        if (y.length > 2) json[y.shift()] = y;
-        else json[y.shift()] = y[0];
+      .map(y => y.replace(/%/gu, ''))
+      .map(z => {
+        const y = z.split('\n');
+        if (y.length > 2) {
+          json[y.shift()] = y;
+        } else {
+          json[y.shift()] = y[0];
+        }
       });
-    tux.rebornRepo.set(json.NAME, json);
+    try {
+      tux.commands
+        .get('aur -S')
+        .getPinfo(json.NAME)
+        .then(y => {
+          json.AUR_VERSION = y.results[0]?.Version || '';
+          tux.rebornRepo.set(json.NAME, json);
+          if (
+            json.AUR_VERSION &&
+            json.VERSION !== json.AUR_VERSION.replace(/\d:/g, '')
+          ) {
+            tux.outdated.set(json.NAME, {
+              version: json.VERSION,
+              aurVersion: json.AUR_VERSION,
+            });
+          }
+        });
+    } catch (error) {
+      tux.rebornRepo.set(json.NAME, json);
+    }
   });
 }
 

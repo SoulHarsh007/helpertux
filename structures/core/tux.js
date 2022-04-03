@@ -39,5 +39,6 @@ export class HelperTux extends Client {
     this.commands = new Collection();
     this.rebornRepo = new Collection();
     this.tldr = new Collection();
+    this.outdated = new Collection();
   }
 }

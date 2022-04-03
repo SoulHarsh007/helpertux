@@ -5,7 +5,7 @@ import {
   fetchTLDR,
   cacheTLDR,
 } from '../utils/repoSyncer.js';
-import {checkRepo} from '../utils/repoChecker.js';
+import {checkRepo, checkPackages} from '../utils/repoChecker.js';
 
 /**
  * @author SoulHarsh007 <harsh.peshwani@outlook.com>
@@ -39,5 +39,6 @@ export default class Ready extends BaseEvent {
     setInterval(() => checkRepo(this.tux), 28800000);
     await fetchTLDR(this.tux);
     cacheTLDR(this.tux);
+    checkPackages(this.tux);
   }
 }
