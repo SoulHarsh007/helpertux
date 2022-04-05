@@ -38,7 +38,7 @@
     "bufferutil": "4.0.6",
     "cheerio": "1.0.0-rc.10",
     "discord.js": "12",
-    "fastify": "3.27.4",
+    "fastify": "3.28.0",
     "node-unar": "1.0.7",
     "pretty-bytes": "6.0.0",
     "semver": "7.3.5",
