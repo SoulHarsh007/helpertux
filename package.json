@@ -41,7 +41,7 @@
     "fastify": "3.27.4",
     "node-unar": "1.0.7",
     "pretty-bytes": "6.0.0",
-    "semver": "7.3.5",
+    "semver": "7.3.6",
     "utf-8-validate": "5.0.9",
     "zlib-sync": "0.1.7"
   }
