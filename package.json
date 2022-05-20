@@ -36,7 +36,7 @@
     "@nia3208/pretty-ms": "7.0.0",
     "bs58": "5.0.0",
     "bufferutil": "4.0.6",
-    "cheerio": "1.0.0-rc.10",
+    "cheerio": "1.0.0-rc.11",
     "discord.js": "12",
     "fastify": "3.27.4",
     "node-unar": "1.0.7",
