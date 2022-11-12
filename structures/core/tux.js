@@ -1,4 +1,5 @@
 import {Client, Collection} from 'discord.js';
+import db from '../../utils/db.js';
 import {Logger} from '../logger/logger.js';
 
 /**
@@ -41,5 +42,9 @@ export class HelperTux extends Client {
     this.tldr = new Collection();
     this.outdated = new Collection();
     this.archCommits = new Set();
+    /**
+     * @type {import('quick.db').QuickDB}
+     */
+    this.pacmon = db;
   }
 }

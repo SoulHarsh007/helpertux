@@ -81,6 +81,7 @@ export function cacheRepo(tux) {
         }
       });
     try {
+      json.VERSION = json.VERSION.replace(/\.\d$/g, '');
       tux.commands
         .get('aur -S')
         .getPinfo(json.NAME)
@@ -89,7 +90,7 @@ export function cacheRepo(tux) {
           tux.rebornRepo.set(json.NAME, json);
           if (
             json.AUR_VERSION &&
-            json.VERSION !== json.AUR_VERSION.replace(/\d:/g, '')
+            json.VERSION.replace(/\.\d$/g) !== json.AUR_VERSION.replace(/\d:/g, '')
           ) {
             tux.outdated.set(json.NAME, {
               version: json.VERSION,
