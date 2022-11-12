@@ -40,10 +40,6 @@ export default class SearchOfficial extends BaseCommand {
         const {results} = await this.tux.commands
           .get('pacman -S')
           .getPinfo(x.name);
-        console.log(
-          '🚀 ~ file: pacmon -i.js ~ line 43 ~ SearchOfficial ~ execute ~ results',
-          results
-        );
         if (results.length) {
           const epoch = results[0].epoch ? `${results[0].epoch}:` : '';
           const version = `${epoch}${results[0].pkgver}-${results[0].pkgrel}`;

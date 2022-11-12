@@ -71,7 +71,7 @@ export default async function pacmonLoader(tux) {
             str ? str : '[No Package Update Detected]'
           }\n\nThe following packages have not been updated:\n\n${
             noStr ? noStr : '[No Package Update Detected]'
-          }}`,
+          }`,
           {
             split: true,
             code: 'css',
