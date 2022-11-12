@@ -41,7 +41,7 @@ export default class SearchOfficial extends BaseCommand {
     const uSub =
       (await this.tux.pacmon.get(msg.author.id)) ||
       (await this.tux.pacmon.set(msg.author.id, []));
-    if (uSub.find(x => x.name !== args.join(' '))) {
+    if (!uSub.find(x => x.name === args.join(' '))) {
       return msg.reply({
         embed: new MessageEmbed()
           .setTitle('You are not subscribed to this package!')
