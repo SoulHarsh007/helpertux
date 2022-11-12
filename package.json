@@ -41,7 +41,7 @@
     "cheerio": "1.0.0-rc.10",
     "discord.js": "12",
     "fastify": "3.27.4",
-    "node-unar": "1.0.7",
+    "node-unar": "1.0.8",
     "pretty-bytes": "6.0.0",
     "quick.db": "9.0.6",
     "semver": "7.3.5",
