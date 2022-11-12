@@ -10,6 +10,7 @@ import {
   checkRepo,
   checkPackages,
 } from '../utils/repoChecker.js';
+import pacmonLoader from '../utils/pacmonLoader.js';
 
 /**
  * @author SoulHarsh007 <harsh.peshwani@outlook.com>
@@ -37,14 +38,16 @@ export default class Ready extends BaseEvent {
       'Connected!',
       'Ready'
     );
-    await fetchRepo(this.tux);
-    cacheRepo(this.tux);
-    checkRepo(this.tux);
-    setInterval(() => checkRepo(this.tux), 28800000);
-    await fetchTLDR(this.tux);
-    cacheTLDR(this.tux);
-    setTimeout(() => checkPackages(this.tux), 10000);
-    archPackagesMonitor(this.tux);
-    setInterval(() => archPackagesMonitor(this.tux), 900000);
+    // await fetchRepo(this.tux);
+    // cacheRepo(this.tux);
+    // checkRepo(this.tux);
+    // setInterval(() => checkRepo(this.tux), 28800000);
+    // await fetchTLDR(this.tux);
+    // cacheTLDR(this.tux);
+    // setTimeout(() => checkPackages(this.tux), 10000);
+    // archPackagesMonitor(this.tux);
+    // setInterval(() => archPackagesMonitor(this.tux), 900000);
+    pacmonLoader(this.tux);
+    setInterval(() => pacmonLoader(this.tux), 3600000);
   }
 }

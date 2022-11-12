@@ -1,5 +1,4 @@
 import {readdirSync} from 'fs';
-
 /**
  * @author SoulHarsh007 <harsh.peshwani@outlook.com>
  * @copyright SoulHarsh007 2021

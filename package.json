@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "7zip-min": "1.4.2",
+    "dotenv": "16.0.0",
     "eslint": "8.12.0",
     "eslint-config-google": "0.14.0",
     "eslint-config-prettier": "8.5.0",
@@ -34,6 +35,7 @@
     "7zip-bin": "5.1.1",
     "@nia3208/centra": "1.0.9-1",
     "@nia3208/pretty-ms": "7.0.0",
+    "better-sqlite3": "7.6.2",
     "bs58": "5.0.0",
     "bufferutil": "4.0.6",
     "cheerio": "1.0.0-rc.10",
@@ -41,6 +43,7 @@
     "fastify": "3.27.4",
     "node-unar": "1.0.7",
     "pretty-bytes": "6.0.0",
+    "quick.db": "9.0.6",
     "semver": "7.3.5",
     "utf-8-validate": "5.0.9",
     "zlib-sync": "0.1.7"

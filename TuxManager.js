@@ -3,6 +3,8 @@ import {HelperTux} from './structures/core/tux.js';
 import {load} from './utils/TuxProcessHelper.js';
 import cluster from 'cluster';
 import fastify from 'fastify';
+import dotenv from 'dotenv';
+dotenv.config();
 
 if (cluster.isPrimary) {
   let x = 0;
