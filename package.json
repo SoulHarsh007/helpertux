@@ -40,7 +40,7 @@
     "bufferutil": "4.0.7",
     "cheerio": "1.0.0-rc.12",
     "discord.js": "12.5.3",
-    "fastify": "3.29.3",
+    "fastify": "4.10.0",
     "node-unar": "1.0.8",
     "pm2": "5.2.2",
     "pretty-bytes": "6.0.0",
