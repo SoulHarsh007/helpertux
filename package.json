@@ -35,7 +35,7 @@
     "7zip-bin": "5.2.0",
     "@nia3208/centra": "1.0.9-1",
     "@nia3208/pretty-ms": "7.0.0",
-    "better-sqlite3": "7.6.2",
+    "better-sqlite3": "8.0.0",
     "bs58": "5.0.0",
     "bufferutil": "4.0.7",
     "cheerio": "1.0.0-rc.12",
