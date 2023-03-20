@@ -35,7 +35,6 @@ export default async function pacmonLoader(tux) {
       }
       if (user) {
         let str = '';
-        let noStr = '';
         let hasChange = false;
         const newData = [];
         uSub.value
@@ -55,7 +54,6 @@ export default async function pacmonLoader(tux) {
                 version,
               });
             } else {
-              noStr += `${x.name} - ${x.version} => ${version} [NO CHANGE]\n`;
               newData.push({
                 name: x.name,
                 version,
@@ -69,8 +67,6 @@ export default async function pacmonLoader(tux) {
         await channel.send(
           `Hey ${user.tag},\n\nThe following packages have been updated:\n\n${
             str ? str : '[No Package Update Detected]'
-          }\n\nThe following packages have not been updated:\n\n${
-            noStr ? noStr : '[No Package Update Detected]'
           }`,
           {
             split: true,
