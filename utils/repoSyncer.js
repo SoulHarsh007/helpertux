@@ -81,17 +81,13 @@ export function cacheRepo(tux) {
         }
       });
     try {
-      json.VERSION = json.VERSION.replace(/\.\d$/g, '');
       tux.commands
         .get('aur -S')
         .getPinfo(json.NAME)
         .then(y => {
           json.AUR_VERSION = y.results[0]?.Version || '';
           tux.rebornRepo.set(json.NAME, json);
-          if (
-            json.AUR_VERSION &&
-            json.VERSION.replace(/\.\d$/g) !== json.AUR_VERSION.replace(/\d:/g, '')
-          ) {
+          if (json.AUR_VERSION && json.VERSION !== json.AUR_VERSION) {
             tux.outdated.set(json.NAME, {
               version: json.VERSION,
               aurVersion: json.AUR_VERSION,
