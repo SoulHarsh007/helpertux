@@ -68,7 +68,11 @@ export async function fetchRepo(tux) {
  * @returns {boolean} true if v2 is greater than v1
  */
 export function isOutdatedVersion(v1, v2) {
-  return compare(v1, v2) < 0;
+  try {
+    return compare(v1, v2) < 0;
+  } catch (err) {
+    return v1 !== v2;
+  }
 }
 
 /**
