@@ -39,7 +39,7 @@
     "bs58": "5.0.0",
     "bufferutil": "4.0.7",
     "cheerio": "1.0.0-rc.12",
-    "discord.js": "12.5.3",
+    "discord.js": "14.9.0",
     "dpkg-compare-versions": "1.0.3",
     "fastify": "3.29.5",
     "node-unar": "1.0.8",
