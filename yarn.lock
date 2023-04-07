@@ -916,6 +916,11 @@ dotenv@16.0.3:
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.0.3.tgz#115aec42bac5053db3c456db30cc243a5a836a07"
   integrity sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==
 
+dpkg-compare-versions@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/dpkg-compare-versions/-/dpkg-compare-versions-1.0.3.tgz#994bb36d5b27be9bccc5242302bbb16271d8d253"
+  integrity sha512-iFzCz1i/b4cX5fhZLOtCJOC7vwZkGTArZGXELVFiX0SF/YQiZF9Vb+psneG1DTUmLlz2BRcuTF9i0xb+KxEP3w==
+
 emitter-listener@^1.1.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/emitter-listener/-/emitter-listener-1.1.2.tgz#56b140e8f6992375b3d7cb2cab1cc7432d9632e8"
@@ -2470,10 +2475,10 @@ quick-format-unescaped@^4.0.3:
   resolved "https://registry.yarnpkg.com/quick-format-unescaped/-/quick-format-unescaped-4.0.4.tgz#93ef6dd8d3453cbc7970dd614fad4c5954d6b5a7"
   integrity sha512-tYC1Q1hgyRuHgloV/YXs2w15unPVh8qfu/qCTfhTYamaw7fyhumKa2yGpdSo87vY32rIclj+4fWYQXUMs9EHvg==
 
-quick.db@9.1.3:
-  version "9.1.3"
-  resolved "https://registry.yarnpkg.com/quick.db/-/quick.db-9.1.3.tgz#4f6928fbee6e47406af19f16cb689e6075423c51"
-  integrity sha512-Wi8Vcg3qsqwD/Q24W72Olhq8SsEQb+HAqrsqFiv4YYaxVB89J6ME67lZ9Vhw+YbRFO1tKz2WS6BH0Bptxg38kA==
+quick.db@9.1.4:
+  version "9.1.4"
+  resolved "https://registry.yarnpkg.com/quick.db/-/quick.db-9.1.4.tgz#56f9464db87b89a8a2186f33201cc8e6399ccde0"
+  integrity sha512-fFlfPNnq36pVG5FYz8bqYbipNmmfb57XRgNOl9h1C6aFWazDfgwNJBMWX54V9F85YB8tEUeFeZ0ADtNivZHIKg==
   dependencies:
     lodash "^4.17.21"
 

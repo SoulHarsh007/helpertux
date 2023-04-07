@@ -2,6 +2,7 @@ import {centra} from '@nia3208/centra';
 import {path7za} from '7zip-bin';
 import {execSync} from 'child_process';
 import {writeFileSync, readdirSync, readFileSync, rmSync, mkdirSync} from 'fs';
+import compare from 'dpkg-compare-versions';
 
 /**
  * @author SoulHarsh007 <harsh.peshwani@outlook.com>
@@ -58,6 +59,19 @@ export async function fetchRepo(tux) {
 }
 
 /**
+ * @author SoulHarsh007 <harsh.peshwani@outlook.com
+ * @copyright SoulHarsh007 2021
+ * @function compareVersions
+ * @param {string} v1 - version 1
+ * @param {string} v2 - version 2
+ * @description used to compare versions
+ * @returns {boolean} true if v2 is greater than v1
+ */
+export function isOutdatedVersion(v1, v2) {
+  return compare(v1, v2) < 0;
+}
+
+/**
  * @author SoulHarsh007 <harsh.peshwani@outlook.com>
  * @copyright SoulHarsh007 2021
  * @since v1.0.0-Beta
@@ -87,7 +101,15 @@ export function cacheRepo(tux) {
         .then(y => {
           json.AUR_VERSION = y.results[0]?.Version || '';
           tux.rebornRepo.set(json.NAME, json);
-          if (json.AUR_VERSION && json.VERSION !== json.AUR_VERSION) {
+          if (
+            json.AUR_VERSION &&
+            isOutdatedVersion(
+              isNaN(json.VERSION[0]) ? json.VERSION.slice(1) : json.VERSION,
+              isNaN(json.AUR_VERSION[0])
+                ? json.AUR_VERSION.slice(1)
+                : json.AUR_VERSION
+            )
+          ) {
             tux.outdated.set(json.NAME, {
               version: json.VERSION,
               aurVersion: json.AUR_VERSION,
