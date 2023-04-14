@@ -45,7 +45,7 @@
     "node-unar": "1.0.8",
     "pm2": "5.3.0",
     "pretty-bytes": "6.1.0",
-    "quick.db": "9.1.4",
+    "quick.db": "9.1.5",
     "semver": "7.3.8",
     "utf-8-validate": "5.0.10",
     "zlib-sync": "0.1.8"
