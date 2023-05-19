@@ -22,7 +22,7 @@
   "devDependencies": {
     "7zip-min": "1.4.4",
     "dotenv": "16.0.3",
-    "eslint": "8.38.0",
+    "eslint": "8.41.0",
     "eslint-config-google": "0.14.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-jsdoc": "41.1.1",
