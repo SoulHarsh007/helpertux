@@ -38,7 +38,9 @@ if (cluster.isPrimary) {
   });
   (async () => {
     try {
-      await server.listen(process.env.PORT, '0.0.0.0');
+      await server.listen({
+        port: process.env.PORT || 3000,
+      });
       console.log(`Server is listening on ${server.server.address().port}`);
     } catch (err) {
       console.log('Failed creating server');

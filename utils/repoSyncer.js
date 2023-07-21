@@ -1,8 +1,7 @@
 import {centra} from '@nia3208/centra';
-import {path7za} from '7zip-bin';
-import {execSync} from 'child_process';
-import {writeFileSync, readdirSync, readFileSync, rmSync, mkdirSync} from 'fs';
+import {execFileSync} from 'child_process';
 import compare from 'dpkg-compare-versions';
+import {mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync} from 'fs';
 
 /**
  * @author SoulHarsh007 <harsh.peshwani@outlook.com>
@@ -14,9 +13,13 @@ import compare from 'dpkg-compare-versions';
  * @description Used to download and extract repo tarball
  */
 export async function fetchRepo(tux) {
-  const mirrors = readFileSync('./repo/reborn-mirrorlist')
-    .toString()
-    .match(/(http)(s)?:\/\/(.)*/g);
+  const mirrors = await centra(process.env.MIRROR_LIST_URI)
+    .text()
+    .then(x => x.match(/(http)(s)?:\/\/(.)*/g))
+    .catch(err => {
+      console.error(err);
+      return [process.env.SOURCE_REPOSITORY_URI];
+    });
   let db;
   for await (const mirror of mirrors) {
     try {
@@ -35,6 +38,25 @@ export async function fetchRepo(tux) {
       );
     }
   }
+  let i = 0;
+  while (!db || i !== mirrors.length) {
+    try {
+      tux.logger.log(
+        `Fetching repo data from mirror: ${mirrors[i]}`,
+        'INFO',
+        'REPO-SYNC'
+      );
+      db = await centra(`${mirrors[i]}Reborn-OS.db.tar.xz`).raw();
+      break;
+    } catch (error) {
+      tux.logger.log(
+        `Failed at downloading repo: ${error}\nMirror: ${mirrors[i]}`,
+        'ERROR',
+        'REPO-SYNC'
+      );
+    }
+    i++;
+  }
   try {
     writeFileSync('./repo/db.tar.xz', db);
   } catch (error) {
@@ -44,10 +66,16 @@ export async function fetchRepo(tux) {
     recursive: true,
     force: true,
   });
-  mkdirSync('./repo/extracted');
+  mkdirSync('./repo/extracted', {
+    recursive: true,
+  });
   try {
-    execSync(`${path7za} x ./repo/db.tar.xz -y -o./repo/`);
-    execSync(`${path7za} x ./repo/db.tar -y -o./repo/extracted/`);
+    execFileSync('bsdtar', [
+      '-C',
+      './repo/extracted/',
+      '-xf',
+      './repo/db.tar.xz',
+    ]);
   } catch (error) {
     tux.logger.log(
       `Failed at extracting tarball: ${error}`,
@@ -154,9 +182,16 @@ export async function fetchTLDR(tux) {
     recursive: true,
     force: true,
   });
-  mkdirSync('./tldr/extracted');
+  mkdirSync('./tldr/extracted', {
+    recursive: true,
+  });
   try {
-    execSync(`${path7za} x ./tldr/data.zip -y -o./tldr/extracted/`);
+    execFileSync('bsdtar', [
+      '-C',
+      './tldr/extracted/',
+      '-xf',
+      './tldr/data.zip',
+    ]);
   } catch (error) {
     tux.logger.log(
       `Failed to extract tldr zip: ${error}`,

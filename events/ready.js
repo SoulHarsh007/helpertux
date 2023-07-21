@@ -43,6 +43,8 @@ export default class Ready extends BaseEvent {
     checkRepo(this.tux);
     setTimeout(() => checkPackages(this.tux), 10000);
     setInterval(async () => {
+      this.tux.rebornRepo.clear();
+      this.tux.outdated.clear();
       await fetchRepo(this.tux);
       cacheRepo(this.tux);
       checkRepo(this.tux);

@@ -1,9 +1,8 @@
 import {centra} from '@nia3208/centra';
-import {path7za} from '7zip-bin';
-import {execSync} from 'child_process';
-import {writeFileSync, readdirSync, readFileSync, mkdirSync, rmSync} from 'fs';
-import {MessageEmbed, Collection} from 'discord.js';
 import {prettyMS} from '@nia3208/pretty-ms';
+import {execFileSync} from 'child_process';
+import {Collection, MessageEmbed} from 'discord.js';
+import {mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync} from 'fs';
 import privateBin from './privateBin.js';
 
 /**
@@ -122,8 +121,12 @@ export async function checkRepo(tux) {
       });
       mkdirSync('./repo/check');
       try {
-        execSync(`${path7za} x ./repo/db.check.tar.xz -y -o./repo/`);
-        execSync(`${path7za} x ./repo/db.tar -y -o./repo/check/`);
+        execFileSync('bsdtar', [
+          '-C',
+          './repo/check',
+          '-xf',
+          './repo/db.check.tar.xz',
+        ]);
         tux.logger.log(
           'Extracted repo files successfully',
           'SUCCESS',
