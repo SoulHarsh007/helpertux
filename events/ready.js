@@ -1,16 +1,12 @@
 import BaseEvent from '../structures/event/baseEvent.js';
-import {
-  fetchRepo,
-  cacheRepo,
-  fetchTLDR,
-  cacheTLDR,
-} from '../utils/repoSyncer.js';
-import {
-  archPackagesMonitor,
-  checkRepo,
-  checkPackages,
-} from '../utils/repoChecker.js';
 import pacmonLoader from '../utils/pacmonLoader.js';
+import {checkPackages, checkRepo} from '../utils/repoChecker.js';
+import {
+  cacheRepo,
+  cacheTLDR,
+  fetchRepo,
+  fetchTLDR,
+} from '../utils/repoSyncer.js';
 
 /**
  * @author SoulHarsh007 <harsh.peshwani@outlook.com>
@@ -52,8 +48,6 @@ export default class Ready extends BaseEvent {
     }, 28800000);
     await fetchTLDR(this.tux);
     cacheTLDR(this.tux);
-    archPackagesMonitor(this.tux);
-    setInterval(() => archPackagesMonitor(this.tux), 900000);
     pacmonLoader(this.tux);
     setInterval(() => pacmonLoader(this.tux), 3600000);
   }
