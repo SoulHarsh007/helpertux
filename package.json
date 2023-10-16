@@ -36,7 +36,7 @@
     "@nia3208/pretty-ms": "7.0.0",
     "better-sqlite3": "8.6.0",
     "bs58": "5.0.0",
-    "bufferutil": "4.0.7",
+    "bufferutil": "4.0.8",
     "cheerio": "1.0.0-rc.12",
     "discord.js": "12.5.3",
     "dpkg-compare-versions": "1.0.3",
