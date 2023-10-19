@@ -40,7 +40,7 @@
     "cheerio": "1.0.0-rc.12",
     "discord.js": "12.5.3",
     "dpkg-compare-versions": "1.0.3",
-    "fastify": "4.23.2",
+    "fastify": "4.24.3",
     "pm2": "5.3.0",
     "pretty-bytes": "6.1.1",
     "quick.db": "9.1.7",
