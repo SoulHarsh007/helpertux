@@ -28,7 +28,7 @@
     "eslint-plugin-jsdoc": "46.8.2",
     "eslint-plugin-prettier": "5.0.0",
     "husky": "8.0.3",
-    "node-gyp": "9.4.0",
+    "node-gyp": "10.0.1",
     "prettier": "3.0.3"
   },
   "dependencies": {
