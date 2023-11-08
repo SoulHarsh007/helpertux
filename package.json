@@ -34,7 +34,7 @@
   "dependencies": {
     "@nia3208/centra": "1.0.9-1",
     "@nia3208/pretty-ms": "7.0.0",
-    "better-sqlite3": "8.6.0",
+    "better-sqlite3": "9.1.0",
     "bs58": "5.0.0",
     "bufferutil": "4.0.7",
     "cheerio": "1.0.0-rc.12",
