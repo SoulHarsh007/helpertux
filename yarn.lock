@@ -1078,10 +1078,10 @@ eslint-config-prettier@9.1.0:
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-9.1.0.tgz#31af3d94578645966c082fcb71a5846d3c94867f"
   integrity sha512-NSWl5BFQWEPi1j4TjVNItzYV7dZXZ+wP6I6ZhrBGpChQhZRUaElihE9uRRkcbRnNb76UMKDF3r+WTmNcGPKsqw==
 
-eslint-plugin-jsdoc@46.9.1:
-  version "46.9.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-46.9.1.tgz#d30adce51fecc768e87481bf4de46b8618c3d50e"
-  integrity sha512-11Ox5LCl2wY7gGkp9UOyew70o9qvii1daAH+h/MFobRVRNcy7sVlH+jm0HQdgcvcru6285GvpjpUyoa051j03Q==
+eslint-plugin-jsdoc@48.0.3:
+  version "48.0.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-48.0.3.tgz#242d92f64c676a697612c0104e1fc1a8d9fd414f"
+  integrity sha512-+vQWLZ9QmT23yU+8yolfga6p9AtC6dUCwtVoJe4+DClvhnoGswKZcOqw+tMA/lkj5zbgr67PYWwgMvQftPx7Dw==
   dependencies:
     "@es-joy/jsdoccomment" "~0.41.0"
     are-docs-informative "^0.0.2"
@@ -3079,6 +3079,7 @@ statuses@2.0.1:
   integrity sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
