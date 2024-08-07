@@ -20,7 +20,7 @@
     }
   },
   "devDependencies": {
-    "7zip-min": "1.4.4",
+    "7zip-min": "1.4.5",
     "dotenv": "16.3.1",
     "eslint": "8.56.0",
     "eslint-config-google": "0.14.0",
