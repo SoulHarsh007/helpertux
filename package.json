@@ -11,7 +11,7 @@
     "lint:fix": "eslint ./*.js ./commands/*.js ./utils/*.js ./events/*.js ./structures/*/*.js --fix"
   },
   "engines": {
-    "node": "20.x",
+    "node": "22.x",
     "yarn": "1.x.x"
   },
   "husky": {
