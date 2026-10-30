@@ -37,7 +37,7 @@
     "better-sqlite3": "9.2.2",
     "bs58": "5.0.0",
     "bufferutil": "4.0.8",
-    "cheerio": "1.0.0-rc.12",
+    "cheerio": "1.2.0",
     "discord.js": "12.5.3",
     "dpkg-compare-versions": "1.0.3",
     "fastify": "4.25.1",
